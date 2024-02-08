@@ -42,8 +42,12 @@ var snake = {
   // length of the snake. grows when eating an apple
   maxCells: 4
 };
-var apple = {
+var apple1 = {
   x: 320,
+  y: 320
+};
+  var apple2 = {
+  x: 20,
   y: 320
 };
 
@@ -95,7 +99,10 @@ function loop() {
 
   // draw apple
   context.fillStyle = 'red';
-  context.fillRect(apple.x, apple.y, grid-1, grid-1);
+  context.fillRect(apple1.x, apple1.y, grid-1, grid-1);
+// draw apple
+  context.fillStyle = 'red';
+  context.fillRect(apple2.x, apple2.y, grid-1, grid-1);
 
   // draw snake one cell at a time
   context.fillStyle = 'green';
