@@ -112,12 +112,19 @@ function loop() {
     context.fillRect(cell.x, cell.y, grid-1, grid-1);  
 
     // snake ate apple
-    if (cell.x === apple.x && cell.y === apple.y) {
+    if (cell.x === apple1.x && cell.y === apple1.y) {
+      snake.maxCells++;
+        // snake ate apple
+    if (cell.x === apple2.x && cell.y === apple2.y) {
       snake.maxCells++;
 
       // canvas is 400x400 which is 25x25 grids 
-      apple.x = getRandomInt(0, 25) * grid;
-      apple.y = getRandomInt(0, 25) * grid;
+      apple1.x = getRandomInt(0, 25) * grid;
+      apple1.y = getRandomInt(0, 25) * grid;
+    }
+          // canvas is 400x400 which is 25x25 grids 
+      apple2.x = getRandomInt(0, 25) * grid;
+      apple2.y = getRandomInt(0, 25) * grid;
     }
 
     // check collision with all cells after this one (modified bubble sort)
@@ -132,8 +139,10 @@ function loop() {
         snake.dx = grid;
         snake.dy = 0;
 
-        apple.x = getRandomInt(0, 25) * grid;
-        apple.y = getRandomInt(0, 25) * grid;
+        apple1.x = getRandomInt(0, 25) * grid;
+        apple1.y = getRandomInt(0, 25) * grid;
+        apple2.x = getRandomInt(0, 25) * grid;
+        apple2.y = getRandomInt(0, 25) * grid;
       }
     }
   });
